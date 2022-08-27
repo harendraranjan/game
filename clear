@@ -1,0 +1,70 @@
+[1mdiff --git a/pb_cutom_zero.py b/pb_cutom_zero.py[m
+[1mdeleted file mode 100644[m
+[1mindex 9a0fab9..0000000[m
+[1m--- a/pb_cutom_zero.py[m
+[1m+++ /dev/null[m
+[36m@@ -1,64 +0,0 @@[m
+[31m-board= ["  " for i in range(9)][m
+[31m-# define the board[m
+[31m-def print_board():[m
+[31m-    row1 = "|{}|{}|{}|".format(board[0], board[1], board[2])[m
+[31m-    row2 = "|{}|{}|{}|".format(board[3], board[4], board[5])[m
+[31m-    row3 = "|{}|{}|{}|".format(board[6], board[7], board[8])[m
+[31m-[m
+[31m-    print()[m
+[31m-    print(row1)[m
+[31m-    print(row2)[m
+[31m-    print(row3)[m
+[31m-    print()[m
+[31m-[m
+[31m-def player_move(icon):[m
+[31m-  if icon == "X":  [m
+[31m-       number = 1[m
+[31m-  elif icon == "O":[m
+[31m-       number = 2[m
+[31m-[m
+[31m-  print("your turn {}".format(number))[m
+[31m-  choice=int(input("Enter your choice(1-9):").strip())[m
+[31m-  if board[choice-1]=="  ":[m
+[31m-    board[choice-1]= icon[m
+[31m-  else:[m
+[31m-    print()[m
+[31m-    print("that space is taken! pleas enter something between 0 to 9")[m
+[31m-        [m
+[31m-def is_vectory(icon):[m
+[31m-   if (board[0]==icon and board[1]==icon and board[2]==icon)or\[m
+[31m-      (board[3]==icon and board[4]==icon and board[5]==icon)or\[m
+[31m-      (board[6]==icon and board[7]==icon and board[8]==icon)or\[m
+[31m-      (board[0]==icon and board[3]==icon and board[6]==icon)or\[m
+[31m-      (board[1]==icon and board[4]==icon and board[7]==icon)or\[m
+[31m-      (board[2]==icon and board[5]==icon and board[8]==icon)or\[m
+[31m-      (board[0]==icon and board[4]==icon and board[8]==icon)or\[m
+[31m-      (board[2]==icon and board[4]==icon and board[6]==icon):[m
+[31m-      return True[m
+[31m-   else:[m
+[31m-      return False[m
+[31m-[m
+[31m-def is_draw():[m
+[31m-    if "  " not in board:[m
+[31m-        return True[m
+[31m-    else:[m
+[31m-        return False[m
+[31m-      [m
+[31m-[m
+[31m-while True:[m
+[31m-    print_board()[m
+[31m-    player_move("X")[m
+[31m-    print_board()[m
+[31m-[m
+[31m-    if is_vectory("X"):[m
+[31m-        print(" X win ! Congratulation")[m
+[31m-        break[m
+[31m-    elif is_draw():[m
+[31m-     player_move("O")[m
+[31m-     print_board()[m
+[31m-     [m
+[31m-    player_move("O")[m
+[31m-    if is_vectory("O"):[m
+[31m-       print_board()[m
+[31m-       print("O wins! Congratulation!")[m
+[31m-       break[m
